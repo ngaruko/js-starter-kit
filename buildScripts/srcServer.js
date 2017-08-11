@@ -1,7 +1,7 @@
-const express = require('express'),
-	path = require('path'),
-	open = require('open'),
-	port = 3000,
+import express from 'express';
+import path from 'path';
+import open from 'open';
+	const port = 3000,
 	app = express();
 	
 // GET method route

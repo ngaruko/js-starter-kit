@@ -24,6 +24,17 @@ app.post('/', function(req, res) {
 	res.send('POST request to the homepage');
 });
 
+//create an API
+app.get('/users', (req, res) => {
+	//hard coded for simplicity....instead of reak db
+	res.json([
+		{ "id": 1, "firstName": "Bede", "lastName": "Ngaruko", "email": "bede@ngaruko.com" },
+		{ "id": 2, "firstName": "tom", "lastName": "Mateo", "email": "tom@ngaruko.com" },
+		{ "id": 3, "firstName": "Marc", "lastName": "Handy", "email": "marc@ngaruko.com" }
+
+	]);
+});
+
 app.listen(port, function(err) {
 	if (err) {
 		console.log(err);

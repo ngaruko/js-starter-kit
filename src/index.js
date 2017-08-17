@@ -1,5 +1,5 @@
 import { getUsers, deleteUser } from './api/userApi';
-import display from './display';
+import doYourThing from './script';
 import './index.css';
 //populate table of users via API call.
 
@@ -14,7 +14,7 @@ let usersBody = "";
 		<td>${user.email}</td> </tr>`;
 	});
 	global.document.getElementById('users').innerHTML = usersBody;
-	display('hello bro');
+
 
 	const deleteLinks = global.document.getElementsByClassName('deleteUser');
 
@@ -27,6 +27,9 @@ let usersBody = "";
 			row.paretNode.removeChild(row);
 		};
 	});
+
+	//display stuff
+	doYourThing();
 });
 
 

@@ -1,5 +1,6 @@
 import { getUsers, deleteUser } from './api/userApi';
 import doYourThing from './script';
+import { doChaining, doTimers, doAsync, doPubSub, doPromises } from './patterns';
 import './index.css';
 //populate table of users via API call.
 
@@ -28,8 +29,15 @@ let usersBody = "";
 		};
 	});
 
-	//display stuff
+	//display stuff  --object and prototype
 	doYourThing();
+
+	//design patterns
+	doChaining();
+	doTimers();
+	doAsync();
+	doPubSub();
+	doPromises();
 });
 
 

@@ -87,11 +87,18 @@ export default function doYourThing() {
 		{
 			get: function() {
 				return this.name.first + ' ' + this.name.last;
+			},
+			set: function(value) {
+				var nameParts = value.split(' ');
+				this.name.first = nameParts[0];
+				this.name.last = nameParts[1];
 			}
 		});
 
 	display('Full Name: ' + person.fullName);
-
+	person.fullName = 'Goerge Kemp';
+	display(person.fullName);
+	display(person.name.first);
 
 	//prototype
 	const arr = ['red', 'blue', 'green'];

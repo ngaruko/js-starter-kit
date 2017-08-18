@@ -52,13 +52,7 @@ const person = {
 	name: { first: 'Miki', last: 'Mouse' },
 	age: 68
 };
-//getters and setters
-Object.defineProperty(person, 'fullName',
-	{
-		get: function()  {
-			return this.name.first + ' ' + this.name.last;
-		}
-	});
+
 
 export default function doYourThing() {
 	'use strict';
@@ -89,5 +83,22 @@ export default function doYourThing() {
 	}
 
 	//getters and setters
+	Object.defineProperty(person, 'fullName',
+		{
+			get: function() {
+				return this.name.first + ' ' + this.name.last;
+			}
+		});
+
 	display('Full Name: ' + person.fullName);
+
+
+	//prototype
+	const arr = ['red', 'blue', 'green'];
+	Object.defineProperty(Array.prototype, 'last', {
+		get: function() { return this[this.length - 1]; }
+	});
+	display(arr.last);
+	const arr2 = [1, 2, 3];
+	display(arr2.last);
 }

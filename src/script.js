@@ -55,7 +55,7 @@ const person = {
 //getters and setters
 Object.defineProperty(person, 'fullName',
 	{
-		get: () => {
+		get: function()  {
 			return this.name.first + ' ' + this.name.last;
 		}
 	});

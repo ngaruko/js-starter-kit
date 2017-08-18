@@ -25,12 +25,12 @@ export function doChaining() {
 	
 	//Observables
 	const Book = function(name, price) {
-		let priceChanging = [];
-		let priceChanged = [];
+		let priceChanging = [],
+		 priceChanged = [];
 		this.name = () => {
 			return name;
 		};
-		this.price = val => {
+		this.price = function(val)  {
 			if (val !== undefined && val !== price) {
 				for (let i = 0; i < priceChanging.length; i++){
 					if (!priceChanging[i](this, val)) {
@@ -38,6 +38,9 @@ export function doChaining() {
 					}
 				}
 				price = val;
+				for (let i = 0; i < priceChanged.length; i++) { 
+					priceChanged[i](this);
+				}
 			}
 			return price;
 		};
@@ -49,7 +52,7 @@ export function doChaining() {
 		};
 
 	};
-	const book = new Book('Inside the mind of hackers', 24.99);
+	let book = new Book('Inside the mind of hackers', 24.99);
 	console.log(`Book Title: ${book.name()}. Cost ${book.price()}. `);//using a method
 	book.onPriceChanging((b, price) => {
 		if (price > 100) {
@@ -59,10 +62,11 @@ export function doChaining() {
 		return true;	
 	});
 	book.onPriceChanged(b => {
-		console.log(`Price changed to $ ${b.price}`);
+		console.log(`Price changed to $ ${b.price()}`);
 	});
 	book.price(19.90);
-//	book.price(200);
+	book.price(200);
+	book.price(87.00);
 }
 
 export function doTimers() {

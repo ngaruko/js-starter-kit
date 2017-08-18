@@ -29,8 +29,8 @@ let usersBody = "";
 		};
 	});
 
-	//display stuff  --object and prototype
-	doYourThing();
+	//--display stuff  --object and prototype
+//	doYourThing();
 
 	//design patterns
 	doChaining();

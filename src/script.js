@@ -56,6 +56,7 @@ const person = {
 
 export default function doYourThing() {
 	'use strict';
+	display('===Objects and prototypes!===');
 	cat.speak('cat object: ' + cat.sound);
 	const doggy = new dog('Poodle', 'big');
 

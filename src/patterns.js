@@ -66,7 +66,7 @@ export function doChaining() {
 	});
 	book.price(19.90);
 	book.price(200);
-	book.price(87.00);
+	book.price(87.00);//can also use ES5 properties for current browsers....but !
 }
 
 export function doTimers() {

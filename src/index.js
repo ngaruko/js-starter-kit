@@ -29,16 +29,17 @@ let usersBody = "";
 		};
 	});
 
-	//--display stuff  --object and prototype
+	
+});
+//--display stuff  --object and prototype
 //	doYourThing();
 
-	//design patterns
-	doChaining();
-	doTimers();
-	doAsync();
-	doPubSub();
-	doPromises();
-});
+//design patterns
+//	doChaining();
+doTimers();
+doAsync();
+doPubSub();
+doPromises();
 
 
 

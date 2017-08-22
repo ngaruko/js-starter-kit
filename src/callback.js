@@ -24,5 +24,7 @@ const handleResults = (err, results, time) => {
 }	
 };
 
-evenDoubler(2, handleResults);
+evenDoubler(4, handleResults);
+evenDoubler(7, handleResults);
+evenDoubler(10, handleResults);
 console.log('--------');
